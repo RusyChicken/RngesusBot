@@ -1,9 +1,10 @@
-const PlayingGame = "with your gems"
+const CommandPrefix = "!";
 const LoginMessage = "Hello everyone, I'm back!";
 const LogoutMessage = "Going to sleep now.  Be back in six hours.  *Zzzz...*";
+const PlayingGame = "with your gems"
 
 var Discord = require("discord.js");
-var Spawn = require("./spawn.js");
+var commands = require("./commands.js");
 
 var loginToken = process.env["DiscordLoginToken"];
 var bot = new Discord.Client({
@@ -23,7 +24,7 @@ process.on("SIGTERM", function() {
             process.exit(128)})});
 });
 bot.on("message", function(message) {
-    if (message.content[0] === "!") {
+    if (message.content[0] === CommandPrefix) {
         handleMessageReceived(message);
     }
 });
@@ -49,32 +50,9 @@ function broadcastMessage(message, callback) {
 }
 
 function handleMessageReceived(message) {
-    if(message.content === "!spawnmonster") {
-        var monster = Spawn.getMonster();
-        var response = "congratulations you spawned " + monster.description +
-            " at " + monster.probability.toString().substr(0, 4) +
-            "% probability\n" + monster.url;
-        bot.reply(message, response);
-    }
-    if(message.content === "!notices") {
-        var response = "http://app.en.unisonleague.com/app_en/information.php"
-        bot.reply(message, response);
-    }
-    if(message.content === "!noticesjp") {
-        var response = "http://app.ja.unisonleague.com/app_jp/information.php"
-        bot.reply(message, response);
-    }
-    if(message.content === "!elementschedule") {
-        var response = "Elemental Rush schedule:\n" + 
-            "Mon-Light Tue-Fire Wed-Water Thu-Wind Fri-Dark\n" +
-            "2:00 AM - 2:59 AM\n7:00 AM - 8:29 AM\n12:20 PM - 12:49 PM\n" +
-            "1:20 PM - 2:29 PM\n7:20 PM - 8:29 PM\n10:30 PM - 11:29 PM\n";
-        bot.reply(message, response);
-    }
-    if(message.content === "!help") {
-        var response = "available commands are:\n" +
-            "!spawnmonster\n!notices\n!noticesjp\n!elementschedule"
-        bot.reply(message, response);
+    for (commandIndex = 0; commandIndex < commands.length; commandIndex++) {
+        if (message.content === CommandPrefix + commands[commandIndex].trigger) {
+            commands[commandIndex].execute(bot, message);
+        }
     }
 }
-
