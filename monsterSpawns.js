@@ -49,6 +49,7 @@ module.exports = [
     new SpawnItem("Valkyrie Veere","http://unisonleague.wikia.com/wiki/Valkyrie_Veere_(Gear)", 0.05),
     new SpawnItem("Emilia, Dreamy Magic","http://unisonleague.wikia.com/wiki/Emilia,_Dreamy_Magic_(Gear)", 0.05),
     new SpawnItem("Gaia","http://unisonleague.wikia.com/wiki/Gaia_(Gear)", 0.05),
+    new SpawnItem("Kirin","http://unisonleague.wikia.com/wiki/Kirin,_the_Wind_Beast_(Gear)", 0.1),
     new SpawnItem("Valkyrie","http://unisonleague.wikia.com/wiki/Valkyrie_(Gear)", 0.1),
     new SpawnItem("Indra, Storm God","http://unisonleague.wikia.com/wiki/Indra,_Storm_God_(Gear)", 0.1),
     new SpawnItem("Alice (French Maid)","http://unisonleague.wikia.com/wiki/Alice_(French_Maid)_(Gear)", 0.05),
