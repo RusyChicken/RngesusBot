@@ -61,6 +61,7 @@ module.exports.getSpawnsByUser = function(userid) {
             "values": [userid]
         }, function(queryError, result) {
             close();
+            console.log("Query result for " + userid, result);
             if (queryError) {
                 console.error("Error selecting from spawn table", queryError); 
             } else {

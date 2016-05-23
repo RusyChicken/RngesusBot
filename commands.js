@@ -19,11 +19,18 @@ module.exports = [
     }),
 
     new BotCommand("stats", function(bot, message) {
-        var userSpawnCount = Database.getSpawnsByUser(message.author.id).length;
-        var gemsSpent = 5 * userSpawnCount;
-        var response = "you have spawned a total of " + userSpawnCount.toString() +
+        var userSpawns = Database.getSpawnsByUser(message.author.id);
+        var userSpawnCount = 0;
+        var gemsSpent = 0;
+        var response = "";
+        if (userSpawns) {
+           userSpawnCount = userSpawns.length;
+           gemsSpent = userSpawnCount * 5;
+        }
+        response = "you have spawned a total of " + userSpawnCount.toString() +
             " monsters.  At 5 gems per spawn, you have spent " + gemsSpent.toString() +
             " gems."
+        bot.reply(message, response);
     }),
 
     new BotCommand("notices", function(bot, message) {
