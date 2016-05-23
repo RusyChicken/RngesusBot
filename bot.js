@@ -1,4 +1,3 @@
-
 const CommandPrefix = "!";
 const LoginMessage = "Hello everyone, I'm back!";
 const LogoutMessage = "Going to sleep now.  Be back in six hours.  *Zzzz...*";
