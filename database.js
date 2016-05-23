@@ -5,8 +5,8 @@ module.exports.createSpawnTable = function() {
         return;
     }
     var createTableCommand = "CREATE TABLE spawn (" + 
-        "spawned timestamp DEFAULT current_timestamp NOT NULL, user text NOT NULL, item text NOT NULL); " +
-        "CREATE INDEX ON spawn (user);" +
+        "spawned timestamp DEFAULT current_timestamp NOT NULL, userid text NOT NULL, item text NOT NULL); " +
+        "CREATE INDEX ON spawn (userid);" +
         "CREATE INDEX ON spawn (item);";
     pg.connect(process.env.DATABASE_URL, function(connectError, client, close) {
         if (connectError) {
@@ -24,11 +24,11 @@ module.exports.createSpawnTable = function() {
     });
 };
 
-module.exports.insertSpawn = function(user, item) {
+module.exports.insertSpawn = function(userid, item) {
     if (!process.env.DATABASE_URL) {
         return;
     }
-    var insertCommand = "INSERT INTO spawn (user, item) values ($1, $2)";
+    var insertCommand = "INSERT INTO spawn (userid, item) values ($1, $2)";
     pg.connect(process.env.DATABASE_URL, function(connectError, client, close) {
         if (connectError) {
             console.error("Error connecting to database: ", connectError);
@@ -36,7 +36,7 @@ module.exports.insertSpawn = function(user, item) {
         }
         client.query({
             "text": insertCommand,
-            "values": [user, item]
+            "values": [userid, item]
         }, function(queryError, result) {
             close();
             if (queryError) {
@@ -46,11 +46,11 @@ module.exports.insertSpawn = function(user, item) {
     });
 }
 
-module.exports.getSpawnsByUser = function(user) {
+module.exports.getSpawnsByUser = function(userid) {
     if (!process.env.DATABASE_URL) {
         return;
     }
-    var selectCommand = "SELECT * FROM spawn WHERE user = $1";
+    var selectCommand = "SELECT * FROM spawn WHERE userid = $1";
     pg.connect(process.env.DATABASE_URL, function(connectError, client, close) {
         if (connectError) {
             console.error("Error connecting to database: ", connectError);
@@ -58,7 +58,7 @@ module.exports.getSpawnsByUser = function(user) {
         }
         client.query({
             "text": selectCommand,
-            "values": [user]
+            "values": [userid]
         }, function(queryError, result) {
             close();
             if (queryError) {
