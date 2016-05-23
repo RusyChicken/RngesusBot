@@ -46,7 +46,7 @@ module.exports.insertSpawn = function(userid, item) {
     });
 }
 
-module.exports.getSpawnsByUser = function(userid) {
+module.exports.getSpawnsByUser = function(userid, callback) {
     if (!process.env.DATABASE_URL) {
         return;
     }
@@ -61,11 +61,13 @@ module.exports.getSpawnsByUser = function(userid) {
             "values": [userid]
         }, function(queryError, result) {
             close();
-            console.log("Query result for " + userid, result);
+            console.log("Query result for " + userid, result.rows);
             if (queryError) {
                 console.error("Error selecting from spawn table", queryError); 
             } else {
-                return result.rows;
+                if (callback) {
+                    callback(result.rows);
+                }
             } 
         });
     });
