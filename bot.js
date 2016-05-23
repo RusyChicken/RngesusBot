@@ -43,7 +43,7 @@ bot.loginWithToken(loginToken, undefined, undefined, function(error) {
 function broadcastMessage(message, callback) {
     for (channelIndex = 0; channelIndex < bot.channels.length; channelIndex++) {
         var currentChannel = bot.channels[channelIndex];
-        if (currentChannel instanceof Discord.TextChannel && currentChannel.name == "general") {
+        if (currentChannel instanceof Discord.TextChannel) {
             bot.sendMessage(currentChannel, message, undefined, callback);
         }
     }
