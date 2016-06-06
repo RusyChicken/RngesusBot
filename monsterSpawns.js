@@ -65,4 +65,5 @@ module.exports = [
     new SpawnItem("Dragoon Cuchulainn","http://unisonleague.wikia.com/wiki/Dragoon_Cuchulainn_(Gear)", 0.1),
     new SpawnItem("Red Riding Hood","http://unisonleague.wikia.com/wiki/Red_Riding_Hood_(Gear)", 0.1),
     new SpawnItem("Melodic Fiine","http://unisonleague.wikia.com/wiki/Melodic_Fiine_(Gear)", 0.1),
+    new SpawnItem("HS Student Joan", "http://unisonleague.wikia.com/wiki/HS_Student_Joan_(Gear)", 0.1),
 ];
