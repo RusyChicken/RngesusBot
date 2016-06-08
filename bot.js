@@ -1,6 +1,6 @@
 const CommandPrefix = "!";
-const LoginMessage = "Hello everyone, I'm back!";
-const LogoutMessage = "Going to sleep now.  Be back in six hours.  *Zzzz...*";
+const LoginMessage = "Everyone give me your gems! :smiling_imp:";
+const LogoutMessage = "Going to sleep now  *Zzzz...*";
 const PlayingGame = "with your gems"
 
 var Discord = require("discord.js");
