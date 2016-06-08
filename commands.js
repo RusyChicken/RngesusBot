@@ -56,4 +56,10 @@ module.exports = [
     new BotCommand("createSpawnTable", function(bot, message) {
         Database.createSpawnTable();
     }),
+
+    new BotCommand("grey", function(bot, message) {
+        var response = "http://i.imgur.com/vvDBlmz.png";
+        bot.reply(message, response);
+    }),
+
 ];
