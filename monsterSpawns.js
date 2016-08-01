@@ -46,6 +46,7 @@ module.exports = [
     new SpawnItem("Santa Flora","http://unisonleague.wikia.com/wiki/Santa_Flora_(Gear)", 0.10),
     new SpawnItem("Andromeda","http://unisonleague.wikia.com/wiki/Andromeda_(Gear)", 0.15),
     new SpawnItem("Ushiwakamaru","http://unisonleague.wikia.com/wiki/Ushiwakamaru_(Gear)", 0.15),
+    new SpawnItem("Snow White","http://unisonleague.wikia.com/wiki/Snow_White_(Gear)", 0.10),
     new SpawnItem("Quetzalcoatl","http://unisonleague.wikia.com/wiki/Quetzalcoatl_(Gear)", 0.2),
     new SpawnItem("Shinatobe, Wind Caller","http://unisonleague.wikia.com/wiki/Shinatobe,_Wind_Caller_(Gear)", 0.15),
     new SpawnItem("Valkyrie Veere","http://unisonleague.wikia.com/wiki/Valkyrie_Veere_(Gear)", 0.1),
