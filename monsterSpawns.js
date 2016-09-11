@@ -37,6 +37,7 @@ module.exports = [
     new SpawnItem("Behemoth","http://unisonleague.wikia.com/wiki/Behemoth_(Gear)", 0.20),
     new SpawnItem("Valkyrie Falarn","http://unisonleague.wikia.com/wiki/Valkyrie_Falarn_(Gear)", 0.10),
     new SpawnItem("Kagutsuchi","http://unisonleague.wikia.com/wiki/Kagutsuchi_(Gear)", 0.15),
+    new SpawnItem("Abeno Seimei", "http://unisonleague.wikia.com/wiki/Abeno_Seimei_(Gear)", 0.15),
     new SpawnItem("Shinatobe, Beach Queen","http://unisonleague.wikia.com/wiki/Shinatobe,_Beach_Queen_(Gear)", 0.10),
     new SpawnItem("Joan of Arc","http://unisonleague.wikia.com/wiki/Joan_of_Arc_(Gear)", 0.15),
     new SpawnItem("Nobunaga","http://unisonleague.wikia.com/wiki/Nobunaga_(Gear)", 0.15),
